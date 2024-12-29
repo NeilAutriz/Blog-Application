@@ -1,0 +1,19 @@
+.header-container {
+    background: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header-tagline {
+    font-size: 1.2rem;
+    margin: 5px 0 0;
+    font-style: italic;
+}

@@ -1,0 +1,29 @@
+.navbar-container {
+    background: #2563eb;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-list li {
+    margin: 0 15px;
+}
+
+.navbar-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-list a:hover {
+    color: #a5b4fc;
+    transform: scale(1.1);
+}
