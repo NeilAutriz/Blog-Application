@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 const Footer = () => {
     return (
         <footer className="footer-container">
-            <p>&copy; 2024 BlueWave Blog. All Rights Reserved.</p>
+            <p>&copy; 2024 Codeavor Blog. All Rights Reserved.</p>
         </footer>
     );
 };

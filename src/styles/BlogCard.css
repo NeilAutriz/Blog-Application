@@ -1,0 +1,98 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors */
+:root {
+    --primary-blue: #003366; /* Dark Blue */
+    --secondary-blue: #00509e; /* Medium Blue */
+    --light-blue: #e6f2ff; /* Light Blue */
+}
+
+.individual-post-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+.indiv-post-card-design{
+    padding: 10px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    margin: 15px;
+    width: 80%;
+}
+
+.post-detail{
+    text-align: justify;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.link-post-label{
+    text-align: center;
+    margin-top: 10px;
+    background-color: #003366;
+    color: white;
+    padding: 5px;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.link-post-label:hover, .linker-label:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #003366;
+}
+
+.link-post-label:active{
+    opacity: 0.5;
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link-post-label {
+    text-align: center;
+    margin-top: 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-post-label:hover {
+    background-color: white;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    cursor: pointer;
+}
+
+.link-post-label:active {
+    background-color: var(--hover-blue);
+    color: white;
+    transform: scale(0.98);
+}

@@ -1,0 +1,27 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors */
+:root {
+    --primary-blue: #003366; /* Dark Blue */
+    --secondary-blue: #00509e; /* Medium Blue */
+    --light-blue: #e6f2ff; /* Light Blue */
+}
+
+.home-card-container{
+    background-color: var(--light-blue);
+    padding: 20px;
+    color: var(--primary-blue);
+    width: 20%;
+    transition: 0.4s;
+}
+
+.home-card-container:hover{
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+}
+
