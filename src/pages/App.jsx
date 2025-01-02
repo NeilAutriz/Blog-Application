@@ -11,9 +11,8 @@ import { useEffect, useState } from 'react';
 import PostPage from './PostPage';
 
 
-
-// Need magcreate ng component for adding new posts.
 // Functionality na pang delete rin ng components. 
+// Maggawa rin ng search bar which allows adding filters. 
 
 export default function App() {
   const [posts, setPosts] = useState([])
@@ -70,7 +69,7 @@ export default function App() {
         <Route path='blogs' element={<Blogs posts={posts}/>} />
         <Route path='blogs/:id' element={<PostPage posts={posts} />} />
         <Route path='about' element={<About />} />
-        <Route path='add' element={<AddPost />} />
+        <Route path='add' element={<AddPost posts={posts} setPosts={setPosts}/>} />
         <Route path='contact' element={<Contact />} />
         <Route path='*' element={<NoPage />}/>
       </Route>
