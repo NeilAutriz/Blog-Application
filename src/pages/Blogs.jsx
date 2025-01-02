@@ -1,14 +1,12 @@
 import BlogCardFeature from "../components/Blogcard";
 import '../styles/Blog.css'
+import Headline from "../components/Headline";
+
 
 const Blogs = ({ posts }) => {
     return (
       <main className="blogs-container">
-        <header className="blogs-header">
-          <h1>Blogs Collection</h1>
-          <p>Your daily dose of insightful articles and updates.</p>
-          
-        </header>
+        <Headline title={'Blogs Collection'} description={'Your daily dose of insightful articles and updates.'}/>
   
         <section className="blogs-grid">
           {posts.map((post) => (

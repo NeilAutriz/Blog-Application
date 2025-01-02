@@ -9,7 +9,7 @@ const Home = () => {
             <div className="hero-section">
                 <img 
                     className="hero-image" 
-                    src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1905&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    src="https://images.unsplash.com/photo-1476460632401-ac176d6ff302?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Programming setup" 
                 />
                 <div className="overlay">

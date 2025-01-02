@@ -6,8 +6,14 @@ import Blogs from './Blogs';
 import NoPage from './NoPage';
 import About from './About';
 import Contact from './Contact';
+import AddPost from './AddPost';
 import { useEffect, useState } from 'react';
+import PostPage from './PostPage';
 
+
+
+// Need magcreate ng component for adding new posts.
+// Functionality na pang delete rin ng components. 
 
 export default function App() {
   const [posts, setPosts] = useState([])
@@ -62,11 +68,12 @@ export default function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='blogs' element={<Blogs posts={posts}/>} />
+        <Route path='blogs/:id' element={<PostPage posts={posts} />} />
         <Route path='about' element={<About />} />
+        <Route path='add' element={<AddPost />} />
         <Route path='contact' element={<Contact />} />
         <Route path='*' element={<NoPage />}/>
       </Route>
     </Routes>
   );
 }
-

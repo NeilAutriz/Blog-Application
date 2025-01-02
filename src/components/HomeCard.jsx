@@ -5,7 +5,7 @@ const HomeCard = ({title, details, timeAndDate}) => {
         <div className='home-card-container'>
             <div className='home-post-card-design'>
                     <h2 className='home-card-title'> {title}</h2>
-                <p className='home-card-detail'> {details}fsa </p>
+                <p className='home-card-detail'>{details}</p>
             </div>
         </div>
     )
