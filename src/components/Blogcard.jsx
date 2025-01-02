@@ -9,7 +9,6 @@ const BlogCardFeature = ({title, details, timeAndDate, id}) => {
                 <div className='card-header'>
                     <h2 className='post-title'> {title}</h2>
                     <h5 className='post-timeDate'> {timeAndDate} </h5>
-                    {id}
                 </div>
                 <div className='card-body'>
                 <p className='post-detail'> {details} </p>

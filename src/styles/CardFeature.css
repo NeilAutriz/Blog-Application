@@ -12,16 +12,17 @@
 }
 
 .home-card-container{
-    background-color: var(--light-blue);
+    background-color: var(--secondary-blue);
+    color: white;
     padding: 20px;
-    color: var(--primary-blue);
     width: 20%;
     transition: 0.4s;
 }
 
 .home-card-container:hover{
-    background-color: #003366;
-    color: white;
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+
     cursor: pointer;
 }
 

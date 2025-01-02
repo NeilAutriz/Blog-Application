@@ -1,19 +1,25 @@
 .header-container {
-    background: #1e3a8a;
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), 
+    url('https://images.unsplash.com/photo-1455894127589-22f75500213a?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center/cover;    
     color: white;
     padding: 20px;
     text-align: center;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Poppins', sans-serif;
 }
 
 .header-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin: 0;
     font-weight: bold;
 }
 
 .header-tagline {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 5px 0 0;
     font-style: italic;
 }

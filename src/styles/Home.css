@@ -44,12 +44,12 @@
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 10px;
 }
 
@@ -60,15 +60,24 @@
     background: var(--light-blue);
 }
 
-.intro-section h2 {
+.intro-section h1 {
     color: var(--secondary-blue);
     margin-bottom: 10px;
 }
 
+.intro-section p {
+    color: var(--secondary-blue);
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 /* Featured Blogs */
 .featured-section {
-    padding: 20px;
-    background: white;
+    padding: 50px;
+    background: linear-gradient(135deg, rgb(230, 222, 222), rgba(255, 255, 255, 0.8)), 
+    url('https://images.unsplash.com/photo-1573165231977-3f0e27806045?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center/cover;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -127,7 +136,6 @@
 
 /* CTA Section */
 .cta-section {
-    margin-top: 10px;
     text-align: center;
     padding: 20px;
     height: 30vh;
@@ -139,14 +147,15 @@
     color: white;
 }
 
-.cta-section h2{
+.cta-section h1{
     color: #00509e;
-    margin: 10px;
+    margin: 3px;
 }
 
 .cta-section p{
     color: #00509e;
     margin: 10px;
+    font-size: 20px;
 }
 
 .cta-button {
@@ -155,7 +164,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
