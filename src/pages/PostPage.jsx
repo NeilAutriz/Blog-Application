@@ -29,7 +29,6 @@ const PostPage = ({ posts, setPosts }) => {
         return null; // Render nothing while redirecting
     }
 
-
     return(
         <div className='indiv-post-page'>
             <div className='container-heading'>
@@ -49,7 +48,7 @@ const PostPage = ({ posts, setPosts }) => {
                     onClick={(e) => handleDelete(e)}>
                         Delete Post
                     </Link>
-                    <Link to={`/blogs`} className="edit-post-button">
+                    <Link to={`/edit/${id}`} className="edit-post-button">
                         Edit Post
                     </Link>     
                     </div>
