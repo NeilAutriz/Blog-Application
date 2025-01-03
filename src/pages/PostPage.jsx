@@ -1,11 +1,35 @@
 import '../styles/PostPage.css'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const PostPage = ({ posts }) => {
+
+const PostPage = ({ posts, setPosts }) => {
     const { id } = useParams();
     const postFound = posts.filter((post) => Number(id) === Number(post.id))
+    const navigate = useNavigate(); // To programmatically redirect
+
+    // Redirect to blogs page if post is not found
+    useEffect(() => {
+        if (postFound.length === 0) {
+            navigate('/blogs');
+        }
+    }, [postFound, navigate]);
     
+    const handleDelete = (e) => {
+        e.preventDefault();
+        const removedPosts = posts.filter((post) => Number(id) !== Number(post.id)) 
+        console.log(removedPosts);
+        setPosts(removedPosts);
+        navigate('/blogs'); // Redirect after deleting
+    }
+
+    if (postFound.length === 0) {
+        return null; // Render nothing while redirecting
+    }
+
+
     return(
         <div className='indiv-post-page'>
             <div className='container-heading'>
@@ -21,12 +45,13 @@ const PostPage = ({ posts }) => {
                     <Link to={`/blogs`} className="return-post-button">
                         Return To Feed
                     </Link>
-                    <Link to={`/blogs`} className="delete-post-button">
+                    <Link to={`/blogs`} className="delete-post-button"
+                    onClick={(e) => handleDelete(e)}>
                         Delete Post
                     </Link>
                     <Link to={`/blogs`} className="edit-post-button">
                         Edit Post
-                    </Link>
+                    </Link>     
                     </div>
                 </div>
             </div>

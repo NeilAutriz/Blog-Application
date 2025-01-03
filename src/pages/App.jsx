@@ -74,7 +74,7 @@ export default function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='blogs' element={<Blogs posts={posts}/>} />
-        <Route path='blogs/:id' element={<PostPage posts={posts} />} />
+        <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} />} />
         <Route path='about' element={<About />} />
         <Route path='add' element={<AddPost posts={posts} setPosts={setPosts}/>} />
         <Route path='contact' element={<Contact />} />
