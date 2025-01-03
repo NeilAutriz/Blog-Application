@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.indiv-post-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    min-height: 70vh;
+}
+
+.container-details{
+    margin-top: 20px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.header-image{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover; /* Maintains aspect ratio and fills the area */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, var(--secondary-blue) 0%, transparent 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.return-post-button{
+    margin-top: 10px;
+    background-color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px;
+    width: 10%;
+    margin-bottom: 10px;
+    opacity: 1;
+    text-decoration: none;
+    transition: 0.5s;
+    border: 2px solid #003366;
+}
+
+.return-post-button:hover, .linker-label:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #003366;
+}
+
+.return-post-button:active{
+    opacity: 0.5;
+}
+
+.button-option-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.delete-post-button{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #dc143c;
+    color: white;
+    padding: 5px;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    opacity: 1;
+    text-decoration: none;
+    transition: 0.5s;
+    border: 2px solid #dc143c;
+}
+
+.delete-post-button:hover, .linker-label:hover{
+    cursor: pointer;
+    background-color:  white;
+    color:  #dc143c;
+}
+
+.delete-post-button:active{
+    opacity: 0.5;
+}
+
+.edit-post-button{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: rgb(212, 212, 99);
+    color: white;
+    padding: 5px;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    opacity: 1;
+    text-decoration: none;
+    transition: 0.5s;
+    border: 2px solid rgb(212, 212, 99);
+}
+
+.edit-post-button:hover, .linker-label:hover{
+    cursor: pointer;
+    background-color:  white;
+    color:  rgb(212, 212, 99);
+}
+
+.edit-post-button:active{
+    opacity: 0.5;
+}
+
+.post-details{
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 29px;
+}

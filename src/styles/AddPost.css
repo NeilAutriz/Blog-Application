@@ -29,7 +29,7 @@
     width: 50%;
     min-height: 50vh;
     border: 2px solid var(--primary-blue);
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
     flex-direction: column;
 }
@@ -76,6 +76,17 @@
     font-size: 15px;
     padding: 5px;
     min-height: 150px;
+}
+
+.input-author{
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid var(--primary-blue);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
 }
 
 .submit-button-blog{

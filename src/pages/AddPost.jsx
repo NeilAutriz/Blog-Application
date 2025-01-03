@@ -7,24 +7,25 @@ const AddPost = ({ posts, setPosts }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [date, setDate] = useState('');
+    const [author, setAuthor] = useState('')
 
     const handleAddBlog = (e) => {
         e.preventDefault();
         const newId = Number(posts.length + 1);
-        console.log(title, body, date, newId);
+        console.log(title, body, date, newId, author);
         const createdBlog = {
             "id": newId,
             "title": title,
             "datetime": date,
+            "author": author,
             "body": body
         }
-        console.log(createdBlog);
         setPosts([...posts, createdBlog]);
-        console.log(posts);
 
         setTitle('');
         setBody('');
         setDate('');
+        setAuthor('');
     }
 
 
@@ -47,6 +48,13 @@ const AddPost = ({ posts, setPosts }) => {
                 onChange={(e) => setDate(e.target.value)}/>
 
                 </div>
+
+                <input type='text' 
+                required className='input-author'
+                placeholder='Enter author of the blog' 
+                value={author} 
+                onChange={(e) => setAuthor(e.target.value)}/>
+
                 <textarea required 
                 className='input-body'
                 placeholder='Enter body of the blog' 
