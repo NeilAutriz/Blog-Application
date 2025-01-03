@@ -5,11 +5,9 @@ import Layout from './Layout';
 import Blogs from './Blogs';
 import NoPage from './NoPage';
 import About from './About';
-import Contact from './Contact';
 import AddPost from './AddPost';
 import { useEffect, useState } from 'react';
 import PostPage from './PostPage';
-
 
 // Functionality na pang delete rin ng components. 
 // Maggawa rin ng search bar which allows adding filters. 
@@ -77,7 +75,6 @@ export default function App() {
         <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} />} />
         <Route path='about' element={<About />} />
         <Route path='add' element={<AddPost posts={posts} setPosts={setPosts}/>} />
-        <Route path='contact' element={<Contact />} />
         <Route path='*' element={<NoPage />}/>
       </Route>
     </Routes>

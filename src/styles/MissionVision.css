@@ -1,0 +1,37 @@
+/* MissionVision.css */
+
+.mission-vision-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    background: var(--light-blue);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section, .vision-section {
+    flex: 1 1 45%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mission-section:hover, .vision-section:hover {
+    transform: scale(1.05);
+}
+
+.mission-section h2, .vision-section h2 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.mission-section p, .vision-section p {
+    color: var(--secondary-blue);
+    font-size: 1rem;
+    line-height: 1.6;
+}

@@ -1,0 +1,79 @@
+/* About.css */
+
+:root {
+    --primary-blue: #003366;
+    --secondary-blue: #00509e;
+    --light-blue: #e6f2ff;
+}
+
+.about-container {
+    font-family: 'Arial', sans-serif;
+    color: var(--primary-blue);
+    background-color: var(--light-blue);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.about-header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, var(--secondary-blue), var(--primary-blue));
+    color: white;
+    border-radius: 10px;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.about-section {
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mission-vision {
+    background: var(--light-blue);
+    border-left: 5px solid var(--primary-blue);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.achievements-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.achievements-list li:before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-blue);
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 10px;
+}
