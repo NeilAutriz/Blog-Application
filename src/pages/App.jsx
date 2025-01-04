@@ -6,30 +6,23 @@ import Blogs from './Blogs';
 import NoPage from './NoPage';
 import About from './About';
 import AddPost from './AddPost';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PostPage from './PostPage';
 import EditPost from './EditPost';
-import api from '../api/blogPosts';
 import useWindowSize from '../hooks/useWindowSize';
+import useFetch from '../hooks/useFetch';
+import { useEffect } from 'react';
 
 export default function App() {
-  const dataUrl = 'http://localhost:3500/posts'
-  const [posts, setPosts] = useState([])
-  const { width } = useWindowSize();
+  const dataUrl = 'http://localhost:3500/posts';
+    const fetchedData = useFetch(dataUrl);
+    const [posts, setPosts] = useState([]);
+    const { width } = useWindowSize();
 
-  useEffect(() => {
-    const getPosts = async () => {
-      try{
-        const response = await api.get(dataUrl);
-        setPosts(response.data);
-      } catch (error){
-        console.error(error);
-      }
-    }
-
-    getPosts();
-
-  }, [])
+    // Sync posts state with fetched data
+    useEffect(() => {
+        setPosts(fetchedData);
+    }, [fetchedData]);
 
 
   return (
