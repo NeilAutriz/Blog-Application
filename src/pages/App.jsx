@@ -10,10 +10,12 @@ import { useEffect, useState } from 'react';
 import PostPage from './PostPage';
 import EditPost from './EditPost';
 import api from '../api/blogPosts';
+import useWindowSize from '../hooks/useWindowSize';
 
 export default function App() {
   const dataUrl = 'http://localhost:3500/posts'
   const [posts, setPosts] = useState([])
+  const { width } = useWindowSize();
 
   useEffect(() => {
     const getPosts = async () => {
@@ -32,8 +34,8 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
+      <Route path='/' element={<Layout width={width}/>}>
+        <Route index element={<Home width={width}/>} />
         <Route path='blogs' element={<Blogs posts={posts}/>} />
         <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
         <Route path='about' element={<About />} />
