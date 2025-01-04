@@ -1,9 +1,12 @@
 import BlogCardFeature from "../components/Blogcard";
 import '../styles/Blog.css'
 import Headline from "../components/Headline";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
+const Blogs = () => {
+  const { posts } = useContext(DataContext);
 
-const Blogs = ({ posts }) => {
     return (
       <main className="blogs-container">
         <Headline title={'Blogs Collection'} description={'Your daily dose of insightful articles and updates.'}/>

@@ -6,36 +6,24 @@ import Blogs from './Blogs';
 import NoPage from './NoPage';
 import About from './About';
 import AddPost from './AddPost';
-import { useState } from 'react';
 import PostPage from './PostPage';
 import EditPost from './EditPost';
-import useWindowSize from '../hooks/useWindowSize';
-import useFetch from '../hooks/useFetch';
-import { useEffect } from 'react';
+import { DataProvider } from '../context/DataContext';
 
 export default function App() {
-  const dataUrl = 'http://localhost:3500/posts';
-    const fetchedData = useFetch(dataUrl);
-    const [posts, setPosts] = useState([]);
-    const { width } = useWindowSize();
-
-    // Sync posts state with fetched data
-    useEffect(() => {
-        setPosts(fetchedData);
-    }, [fetchedData]);
-
-
   return (
-    <Routes>
-      <Route path='/' element={<Layout width={width}/>}>
-        <Route index element={<Home width={width}/>} />
-        <Route path='blogs' element={<Blogs posts={posts}/>} />
-        <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
-        <Route path='about' element={<About />} />
-        <Route path='edit/:id' element={<EditPost posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
-        <Route path='add' element={<AddPost posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
-        <Route path='*' element={<NoPage />}/>
-      </Route>
-    </Routes>
+    <DataProvider > 
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='blogs' element={<Blogs />} />
+          <Route path='blogs/:id' element={<PostPage />} />
+          <Route path='about' element={<About />} />
+          <Route path='edit/:id' element={<EditPost />} />
+          <Route path='add' element={<AddPost />} />
+          <Route path='*' element={<NoPage />}/>
+        </Route>
+      </Routes>
+    </DataProvider>
   );
 }

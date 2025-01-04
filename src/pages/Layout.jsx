@@ -2,8 +2,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import { Outlet } from 'react-router-dom';
+const Layout = () => {
 
-const Layout = ({width}) => {
     return(
         <div className="layout-container">
             <Header />
@@ -11,7 +11,7 @@ const Layout = ({width}) => {
             <main>
                 <Outlet />
             </main>
-            <Footer width={ width }/>
+            <Footer />
         </div>
     )
 }

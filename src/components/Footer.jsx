@@ -1,7 +1,10 @@
 import '../styles/Footer.css';
 import { FaLaptop, FaTabletAlt, FaMobileAlt } from 'react-icons/fa';
+import { useContext } from 'react';
+import DataContext from '../context/DataContext';
 
-const Footer = ({width}) => {
+const Footer = () => {
+    const { width } = useContext(DataContext);
 
     const handleIconShift = (width) => {
         if(width <= 768){

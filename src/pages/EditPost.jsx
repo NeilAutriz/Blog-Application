@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import api from "../api/blogPosts";
 import Headline from "../components/Headline";
+import DataContext from "../context/DataContext";
 
-
-const EditPost = ({ posts, setPosts, dataUrl }) => {
+const EditPost = () => {
+    const {posts, dataUrl} = useContext(DataContext);
     const { id } = useParams();
     let postFound = posts.find((post) => Number(id) === Number(post.id))
     const navigate = useNavigate();

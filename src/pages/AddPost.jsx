@@ -1,10 +1,13 @@
 import '../styles/AddPost.css'
 import Headline from '../components/Headline';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import api from '../api/blogPosts';
+import DataContext from '../context/DataContext';
 
 
-const AddPost = ({ posts, setPosts, dataUrl }) => {
+const AddPost = () => {
+    const { posts, setPosts, dataUrl } = useContext(DataContext);
+
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [date, setDate] = useState('');

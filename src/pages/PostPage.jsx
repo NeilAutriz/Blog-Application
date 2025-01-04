@@ -2,11 +2,14 @@ import '../styles/PostPage.css'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import api from '../api/blogPosts';
+import DataContext from '../context/DataContext';
 
-const PostPage = ({ posts, setPosts, dataUrl }) => {
+const PostPage = () => {
+    const {posts, setPosts, dataUrl} = useContext(DataContext)
+
     const { id } = useParams();
     const postFound = posts.filter((post) => Number(id) === Number(post.id))
     const navigate = useNavigate(); // To programmatically redirect

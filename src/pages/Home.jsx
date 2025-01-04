@@ -2,7 +2,7 @@ import '../styles/Home.css';
 import { Link } from 'react-router-dom';
 import HomeCard from '../components/HomeCard';
 
-const Home = ({width}) => {
+const Home = () => {
     return (
         <div className="home-container">
             {/* Hero Section */}
