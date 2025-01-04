@@ -9,19 +9,16 @@ import AddPost from './AddPost';
 import { useEffect, useState } from 'react';
 import PostPage from './PostPage';
 import EditPost from './EditPost';
-
 import api from '../api/blogPosts';
 
-
-// Magcreate ng pangedit 
-
 export default function App() {
+  const dataUrl = 'http://localhost:3500/posts'
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
     const getPosts = async () => {
       try{
-        const response = await api.get('http://localhost:3500/posts') 
+        const response = await api.get(dataUrl);
         setPosts(response.data);
       } catch (error){
         console.error(error);
@@ -38,10 +35,10 @@ export default function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='blogs' element={<Blogs posts={posts}/>} />
-        <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} />} />
+        <Route path='blogs/:id' element={<PostPage posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
         <Route path='about' element={<About />} />
-        <Route path='edit/:id' element={<EditPost posts={posts} setPosts={setPosts}/>} />
-        <Route path='add' element={<AddPost posts={posts} setPosts={setPosts}/>} />
+        <Route path='edit/:id' element={<EditPost posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
+        <Route path='add' element={<AddPost posts={posts} setPosts={setPosts} dataUrl={dataUrl}/>} />
         <Route path='*' element={<NoPage />}/>
       </Route>
     </Routes>

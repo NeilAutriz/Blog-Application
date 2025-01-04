@@ -41,8 +41,8 @@ body {
   .blogs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
-    gap: 5px;
-    margin-right: 60px;
+    gap: 9px;
+    margin: 40px;
   }
   
   .blog-card {

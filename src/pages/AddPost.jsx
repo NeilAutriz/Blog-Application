@@ -1,31 +1,37 @@
 import '../styles/AddPost.css'
 import Headline from '../components/Headline';
 import { useState } from 'react';
+import api from '../api/blogPosts';
 
 
-const AddPost = ({ posts, setPosts }) => {
+const AddPost = ({ posts, setPosts, dataUrl }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [date, setDate] = useState('');
     const [author, setAuthor] = useState('')
 
-    const handleAddBlog = (e) => {
-        e.preventDefault();
-        const newId = Number(posts.length + 1);
-        console.log(title, body, date, newId, author);
-        const createdBlog = {
-            "id": newId,
-            "title": title,
-            "datetime": date,
-            "author": author,
-            "body": body
-        }
-        setPosts([...posts, createdBlog]);
+    const handleAddBlog = async (e) => {
+        try{
+            e.preventDefault();
+            const newId = Number(posts.length + 1);
+            console.log(title, body, date, newId, author);
+            const createdBlog = {
+                "id": String(newId),
+                "title": title,
+                "datetime": date,
+                "author": author,
+                "body": body
+            }
+            setPosts([...posts, createdBlog]);
+            await api.post(dataUrl, createdBlog);
 
-        setTitle('');
-        setBody('');
-        setDate('');
-        setAuthor('');
+            setTitle('');
+            setBody('');
+            setDate('');
+            setAuthor('');
+        } catch (error){
+            console.log(error);
+        }
     }
 
 

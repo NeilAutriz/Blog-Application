@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import api from "../api/blogPosts";
 import Headline from "../components/Headline";
 
-const EditPost = ({ posts, setPosts }) => {
+
+const EditPost = ({ posts, setPosts, dataUrl }) => {
     const { id } = useParams();
     let postFound = posts.find((post) => Number(id) === Number(post.id))
     const navigate = useNavigate();
@@ -14,20 +15,27 @@ const EditPost = ({ posts, setPosts }) => {
     const [editDate, setEditDate] = useState(postFound.Date || "");
     const [editAuthor, setEditAuthor] = useState(postFound.author || "")
 
-    const handleAddBlog = (e) => {
+    const handleAddBlog = async (e) => {
         e.preventDefault();
 
+        try{
+            postFound.title = editTitle;
+            postFound.body = editBody;
+            postFound.date = editDate;
+            postFound.author = editAuthor;
+            
+            const editUrl = `${dataUrl}/${id}`
+            await api.patch(editUrl, postFound);
+            setEditTitle('');
+            setEditBody('');
+            setEditDate('');
+            setEditAuthor('');
+            navigate('/blogs');
+        } catch (error) {
+            console.log(error);
+        }
 
-        postFound.title = editTitle;
-        postFound.body = editBody;
-        postFound.date = editDate;
-        postFound.author = editAuthor;
 
-        setEditTitle('');
-        setEditBody('');
-        setEditDate('');
-        setEditAuthor('');
-        navigate('/blogs');
     }
 
     return(

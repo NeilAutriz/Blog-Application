@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import api from '../api/blogPosts';
 
-const PostPage = ({ posts, setPosts }) => {
+const PostPage = ({ posts, setPosts, dataUrl }) => {
     const { id } = useParams();
     const postFound = posts.filter((post) => Number(id) === Number(post.id))
     const navigate = useNavigate(); // To programmatically redirect
@@ -17,12 +18,21 @@ const PostPage = ({ posts, setPosts }) => {
         }
     }, [postFound, navigate]);
     
-    const handleDelete = (e) => {
-        e.preventDefault();
-        const removedPosts = posts.filter((post) => Number(id) !== Number(post.id)) 
-        console.log(removedPosts);
-        setPosts(removedPosts);
-        navigate('/blogs'); // Redirect after deleting
+    const handleDelete = async (e) => {
+        try{
+            e.preventDefault();
+            const removedPosts = posts.filter((post) => Number(id) !== Number(post.id)) 
+            console.log(removedPosts);
+            setPosts(removedPosts);
+            
+            const targetUrl = `${dataUrl}/${id}`;
+            console.log(targetUrl);
+            await api.delete(targetUrl);
+
+            navigate('/blogs'); // Redirect after deleting
+        } catch(error) {
+            console.log(error)
+        }
     }
 
     if (postFound.length === 0) {
